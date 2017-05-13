@@ -44,8 +44,9 @@ sudo apt-get install dialog
  19 "Telegram" off 
  20 "Enpass Password manager" off
  21 "Opera Browser" off
- 22 "Icone Numix" off
- 23 " Vivaldi Browser" off)
+ 22 "GUFW" off
+ 23 "Vivaldi Browser" off
+ 24 "Pulizia del sistema" off)
  choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
  clear
  for choice in $choices
@@ -209,12 +210,17 @@ apt-get update && apt-get install opera-stable
  apt-get install gufw -y
  ;;
 23)
-#Vivaldi Browser
+#Install Vivaldi Browser
  echo "Installazione Vivaldi Browser"
 curl http://repo.vivaldi.com/stable/linux_signing_key.pub | apt-key add -
 echo "deb http://repo.vivaldi.com/stable/deb/ stable main" | tee /etc/apt/sources.list.d/vivaldibrowser.list
 apt update
 apt install vivaldi-stable -y
+;;
+24)
+#Clean the system from packages no more useful
+ echo "Pulizia del sistema"
+apt-get autoclean -y && apt-get autoremove -y 
 ;;
 
   esac
