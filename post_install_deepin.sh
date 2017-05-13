@@ -94,8 +94,6 @@ apt-get install gdebi -y
 clear
   echo "Installazione Synaptic"
 apt-get install synaptic -y
-
-cmd=(dialog --separate-output --checklist "Seleziona i programmi che vuoi installare:" 22 76 16)
  ;;
 
  6)
