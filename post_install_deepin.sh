@@ -46,7 +46,8 @@ sudo apt-get install dialog
  21 "Opera Browser" off
  22 "GUFW" off
  23 "Vivaldi Browser" off
- 24 "Pulizia del sistema" off)
+ 24 "Risparmio energetico TLP" off
+ 25 "Pulizia del sistema" off)
  choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
  clear
  for choice in $choices
@@ -166,8 +167,8 @@ clear
  apt install apt-transport-https -y
  curl https://repo.skype.com/data/SKYPE-GPG-KEY | apt-key add -
  echo "deb https://repo.skype.com/deb stable main" | tee /etc/apt/sources.list.d/skypeforlinux.list
- apt update 
- apt install skypeforlinux -y
+ apt-get update 
+ apt-get install skypeforlinux -y
  ;;
 
  15)
@@ -211,8 +212,8 @@ clear
  echo "Installazione Enpass Password manager"
  echo "deb http://repo.sinew.in/ stable main" | tee /etc/apt/sources.list.d/enpass.list
 curl https://dl.sinew.in/keys/enpass-linux.key | apt-key add -
-apt update
-apt install enpass -y
+apt-get update
+apt-get install enpass -y
  ;;
 
  21)
@@ -236,10 +237,16 @@ clear
  echo "Installazione Vivaldi Browser"
 curl http://repo.vivaldi.com/stable/linux_signing_key.pub | apt-key add -
 echo "deb http://repo.vivaldi.com/stable/deb/ stable main" | tee /etc/apt/sources.list.d/vivaldibrowser.list
-apt update
-apt install vivaldi-stable -y
+apt-get update
+apt-get install vivaldi-stable -y
 ;;
 24)
+#Install TLP
+clear
+ echo "Installazione Risparmio energetico TLP"
+apt-get install tlp tlp-rdw && tlp start
+;;
+25)
 #Clean the system from packages no more useful
 clear
  echo "Pulizia del sistema"
