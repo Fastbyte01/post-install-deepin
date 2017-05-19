@@ -1,6 +1,5 @@
 #!/bin/bash 
 # 
-# This file is part of the https://gist.github.com/Fastbyte01
 # Copyright (c) 2017 Giuseppe Pignataro. 
 # 
 # This program is free software: you can redistribute it and/or modify  
@@ -47,7 +46,8 @@ sudo apt-get install dialog
  22 "GUFW" off
  23 "Vivaldi Browser" off
  24 "Risparmio energetico TLP" off
- 25 "Pulizia del sistema" off)
+ 25 "Pulizia del sistema" off
+ 26 "Esci" off)
  choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
  clear
  for choice in $choices
@@ -74,6 +74,7 @@ EOF'
 clear
   echo "Aggiornamento del sistema"
 apt-get update && sudo apt-get upgrade -y
+while [ "$choices" -ne "4" ];do choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty);case $choices in 1) echo "prima scelta" && sleep 5;;esac;done
  ;;
 
  3) 
@@ -81,6 +82,7 @@ apt-get update && sudo apt-get upgrade -y
 clear
   echo "Installazione Font Microsoft"
 apt-get install ttf-mscorefonts-installer -y
+while [ "$choices" -ne "4" ];do choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty);case $choices in 1) echo "prima scelta" && sleep 5;;esac;done
  ;;
  
  4)
@@ -88,6 +90,7 @@ apt-get install ttf-mscorefonts-installer -y
 clear
   echo "Installazione Gdebi"
 apt-get install gdebi -y
+while [ "$choices" -ne "4" ];do choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty);case $choices in 1) echo "prima scelta" && sleep 5;;esac;done
  ;;
 
 5)
@@ -95,6 +98,7 @@ apt-get install gdebi -y
 clear
   echo "Installazione Synaptic"
 apt-get install synaptic -y
+while [ "$choices" -ne "4" ];do choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty);case $choices in 1) echo "prima scelta" && sleep 5;;esac;done
  ;;
 
  6)
@@ -102,6 +106,7 @@ apt-get install synaptic -y
 clear
   echo "Installazione Bleachbit"
 apt-get install bleachbit -y
+while [ "$choices" -ne "4" ];do choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty);case $choices in 1) echo "prima scelta" && sleep 5;;esac;done
  ;;
 
  7)
@@ -109,13 +114,15 @@ apt-get install bleachbit -y
 clear
   echo "Installazione Open JDK8"
 apt-get install openjdk-8-jre icedtea-8-plugin -y
+while [ "$choices" -ne "4" ];do choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty);case $choices in 1) echo "prima scelta" && sleep 5;;esac;done
  ;;
 
  8)
  #Install support for commercial DVD
 clear
   echo "Installazione supporto DVD"
-apt-get install libdvd-pkg libdvdread4 python3 -y && dpkg-reconfigure libdvd-pkg 
+apt-get install libdvd-pkg libdvdread4 python3 -y && dpkg-reconfigure libdvd-pkg
+while [ "$choices" -ne "4" ];do choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty);case $choices in 1) echo "prima scelta" && sleep 5;;esac;done
  ;;
 
  9)
@@ -123,6 +130,7 @@ apt-get install libdvd-pkg libdvdread4 python3 -y && dpkg-reconfigure libdvd-pkg
 clear
   echo "Installazione LibreOffice"
 apt-get install libreoffice libreoffice-help-it libreoffice-l10n-it -y
+while [ "$choices" -ne "4" ];do choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty);case $choices in 1) echo "prima scelta" && sleep 5;;esac;done
  ;;
 
  10)
@@ -130,6 +138,7 @@ apt-get install libreoffice libreoffice-help-it libreoffice-l10n-it -y
 clear
   echo "Installazione VLC Media Player"
 apt-get install vlc -y
+while [ "$choices" -ne "4" ];do choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty);case $choices in 1) echo "prima scelta" && sleep 5;;esac;done
  ;;
 
  11)
@@ -137,6 +146,7 @@ apt-get install vlc -y
 clear
   echo "Installazione Flash Player"
 apt-get install flashplugin-nonfree -y
+while [ "$choices" -ne "4" ];do choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty);case $choices in 1) echo "prima scelta" && sleep 5;;esac;done
  ;;
 
  12)
@@ -148,6 +158,7 @@ sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
 apt-get update 
 apt-get purge google-chrome-stable -y
 apt-get install google-chrome-stable -y
+while [ "$choices" -ne "4" ];do choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty);case $choices in 1) echo "prima scelta" && sleep 5;;esac;done
  ;;
 
  13)
@@ -158,6 +169,7 @@ wget http://download.teamviewer.com/download/teamviewer_i386.deb
 dpkg -i teamviewer_i386.deb
 apt-get install -f -y
 rm -rf teamviewer_i386.deb
+while [ "$choices" -ne "4" ];do choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty);case $choices in 1) echo "prima scelta" && sleep 5;;esac;done
  ;;
 
  14)
@@ -169,6 +181,7 @@ clear
  echo "deb https://repo.skype.com/deb stable main" | tee /etc/apt/sources.list.d/skypeforlinux.list
  apt-get update 
  apt-get install skypeforlinux -y
+ while [ "$choices" -ne "4" ];do choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty);case $choices in 1) echo "prima scelta" && sleep 5;;esac;done
  ;;
 
  15)
@@ -176,6 +189,7 @@ clear
 clear
   echo "Installazione Brasero"
 apt-get install brasero -y
+while [ "$choices" -ne "4" ];do choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty);case $choices in 1) echo "prima scelta" && sleep 5;;esac;done
  ;;
 
  16)
@@ -183,6 +197,7 @@ apt-get install brasero -y
 clear
   echo "Installazione supporto per device Apple"
 apt-get install ifuse -y
+while [ "$choices" -ne "4" ];do choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty);case $choices in 1) echo "prima scelta" && sleep 5;;esac;done
  ;;
 
  17)
@@ -190,6 +205,7 @@ apt-get install ifuse -y
 clear
   echo "Installazione Kodi"
 apt-get install kodi -y
+while [ "$choices" -ne "4" ];do choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty);case $choices in 1) echo "prima scelta" && sleep 5;;esac;done
  ;;
  
  18)
@@ -197,6 +213,7 @@ apt-get install kodi -y
  clear
   echo "Installazione Gimp"
 apt-get install gimp gimp-plugin-registry -y
+while [ "$choices" -ne "4" ];do choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty);case $choices in 1) echo "prima scelta" && sleep 5;;esac;done
  ;;
 
 19)
@@ -204,6 +221,7 @@ apt-get install gimp gimp-plugin-registry -y
 clear
  echo "Installazione Telegram"
 apt-get install telegram -y
+while [ "$choices" -ne "4" ];do choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty);case $choices in 1) echo "prima scelta" && sleep 5;;esac;done
  ;;
 
 20)
@@ -214,6 +232,7 @@ clear
 curl https://dl.sinew.in/keys/enpass-linux.key | apt-key add -
 apt-get update
 apt-get install enpass -y
+while [ "$choices" -ne "4" ];do choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty);case $choices in 1) echo "prima scelta" && sleep 5;;esac;done
  ;;
 
  21)
@@ -223,6 +242,7 @@ clear
 sudo add-apt-repository 'deb https://deb.opera.com/opera-stable/ stable non-free'
 wget -qO- https://deb.opera.com/archive.key | sudo apt-key add -
 apt-get update && apt-get install opera-stable -y
+while [ "$choices" -ne "4" ];do choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty);case $choices in 1) echo "prima scelta" && sleep 5;;esac;done
  ;;
 
  22)
@@ -230,7 +250,9 @@ apt-get update && apt-get install opera-stable -y
 clear
   echo "Installazione GUFW"
 apt-get install gufw -y
+while [ "$choices" -ne "4" ];do choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty);case $choices in 1) echo "prima scelta" && sleep 5;;esac;done
  ;;
+
 23)
 #Install Vivaldi Browser
 clear
@@ -239,13 +261,17 @@ curl http://repo.vivaldi.com/stable/linux_signing_key.pub | apt-key add -
 echo "deb http://repo.vivaldi.com/stable/deb/ stable main" | tee /etc/apt/sources.list.d/vivaldibrowser.list
 apt-get update
 apt-get install vivaldi-stable -y
+while [ "$choices" -ne "4" ];do choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty);case $choices in 1) echo "prima scelta" && sleep 5;;esac;done
 ;;
+
 24)
 #Install TLP
 clear
  echo "Installazione Risparmio energetico TLP"
 apt-get install tlp tlp-rdw && tlp start
+while [ "$choices" -ne "4" ];do choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty);case $choices in 1) echo "prima scelta" && sleep 5;;esac;done
 ;;
+
 25)
 #Clean the system from packages no more useful
 clear
@@ -256,7 +282,13 @@ apt-get clean
 rm -fr /tmp/*
 rm -rfv ~/.local/share/Trash/*
 apt-get update
+while [ "$choices" -ne "4" ];do choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty);case $choices in 1) echo "prima scelta" && sleep 5;;esac;done
 ;;
+
+26)
+#Exit from script
+clear
+exit
 
   esac
  done
