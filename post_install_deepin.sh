@@ -16,7 +16,8 @@
 #
 
 if [[ $EUID -ne 0 ]]; then
- echo "Questo script deve essere eseguito come root" 
+ echo "Questo script deve essere eseguito come root per funzionare." 
+ sleep 2
  exit 1
 fi
 
