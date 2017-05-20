@@ -58,6 +58,7 @@ sudo apt-get install dialog
 
  1)
  #Setting mirror on italian server GARR
+clear
   echo "Impostazione Mirror GARR"
  cd "$HOME" || exit
 cp /etc/apt/sources.list backup.sources.list
@@ -68,20 +69,23 @@ bash -c 'cat << EOF > /etc/apt/sources.list
 ##########################################################################################
 deb [by-hash=force] http://ba.mirror.garr.it/mirrors/deepin/ panda main contrib non-free
 EOF'
-      sudo apt-get update
+sudo apt-get update
+   echo "Operazione completata. Torno al menu principale"
+sleep 2
  ;;
 
 2)
  #Update of the repo and upgrade the system
 
   echo "Aggiornamento del sistema"
+clear
 apt-get update && sudo apt-get upgrade -y
   echo "Operazione completata. Torno al menu principale"
 sleep 2
 ;;
  3) 
  #Install Microsoft Fonts
-
+clear
   echo "Installazione Font Microsoft"
 apt-get install ttf-mscorefonts-installer -y
   echo "Operazione completata. Torno al menu principale"
@@ -90,7 +94,7 @@ sleep 2
 
  4)
  #Install Gdebi
-
+clear
   echo "Installazione Gdebi"
 apt-get install gdebi -y
   echo "Operazione completata. Torno al menu principale"
@@ -99,7 +103,7 @@ sleep 2
 
 5)
  #Install Synaptic
-
+clear
   echo "Installazione Synaptic"
 apt-get install synaptic -y
   echo "Operazione completata. Torno al menu principale"
@@ -108,7 +112,7 @@ sleep 2
 
  6)
  #Install BleachBit
-
+clear
   echo "Installazione Bleachbit"
 apt-get install bleachbit -y
   echo "Operazione completata. Torno al menu principale"
@@ -117,7 +121,7 @@ sleep 2
 
  7)
  #Install JDK 8
-
+clear
   echo "Installazione Open JDK8"
 apt-get install openjdk-8-jre icedtea-8-plugin -y
   echo "Operazione completata. Torno al menu principale"
@@ -126,7 +130,7 @@ sleep 2
 
  8)
  #Install support for commercial DVD
-
+clear
   echo "Installazione supporto DVD"
 apt-get install libdvd-pkg libdvdread4 python3 -y && dpkg-reconfigure libdvd-pkg;
   echo "Operazione completata. Torno al menu principale"
@@ -135,7 +139,7 @@ sleep 2
 
  9)
  #Install the complete suite of LibreOffice and the italian help & translation
-
+clear
   echo "Installazione LibreOffice"
 apt-get install libreoffice libreoffice-help-it libreoffice-l10n-it -y
   echo "Operazione completata. Torno al menu principale"
@@ -144,7 +148,7 @@ sleep 2
 
  10)
  #Install VLC Media Player
-
+clear
   echo "Installazione VLC Media Player"
 apt-get install vlc -y
   echo "Operazione completata. Torno al menu principale"
@@ -153,7 +157,7 @@ sleep 2
 
  11)
  #Install Flash Player
-
+clear
   echo "Installazione Flash Player"
 apt-get install flashplugin-nonfree -y
   echo "Operazione completata. Torno al menu principale"
@@ -162,7 +166,7 @@ sleep 2
 
  12)
 #Install Chrome browser
-
+clear
   echo "Installazione Google Chrome"
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
@@ -175,7 +179,7 @@ sleep 2
 
  13)
  #Install Teamviewer
-
+clear
   echo "Installazione Teamviewer"
 wget http://download.teamviewer.com/download/teamviewer_i386.deb
 dpkg -i teamviewer_i386.deb
@@ -187,7 +191,7 @@ sleep 2
 
  14)
 #Install Skype for Linux
-
+clear
   echo "Installing Skype For Linux"
  apt install apt-transport-https -y
  curl https://repo.skype.com/data/SKYPE-GPG-KEY | apt-key add -
@@ -200,7 +204,7 @@ sleep 2
 
  15)
 #Install Brasero
-
+clear
   echo "Installazione Brasero"
 apt-get install brasero -y
   echo "Operazione completata. Torno al menu principale"
@@ -209,7 +213,7 @@ sleep 2
 
  16)
  #Install iFuse for support iDevice
-
+clear
   echo "Installazione supporto per device Apple"
 apt-get install ifuse -y
   echo "Operazione completata. Torno al menu principale"
@@ -218,7 +222,7 @@ sleep 2
 
  17)
 #Install Kodi
-
+clear
   echo "Installazione Kodi"
 apt-get install kodi -y
   echo "Operazione completata. Torno al menu principale"
@@ -227,7 +231,7 @@ sleep 2
 
  18)
  #Install Gimp
-
+clear
   echo "Installazione Gimp"
 apt-get install gimp gimp-plugin-registry -y
   echo "Operazione completata. Torno al menu principale"
@@ -236,7 +240,7 @@ sleep 2
 
 19)
  #Install Telegram
-
+clear
  echo "Installazione Telegram"
 apt-get install telegram -y
   echo "Operazione completata. Torno al menu principale"
@@ -245,7 +249,7 @@ sleep 2
 
 20)
  #Install Enpass Password manager
-
+clear
  echo "Installazione Enpass Password manager"
  echo "deb http://repo.sinew.in/ stable main" | tee /etc/apt/sources.list.d/enpass.list
 curl https://dl.sinew.in/keys/enpass-linux.key | apt-key add -
@@ -257,7 +261,7 @@ sleep 2
 
  21)
  #Install Opera Browser
-
+clear
   echo "Installazione Opera Browser"
 sudo add-apt-repository 'deb https://deb.opera.com/opera-stable/ stable non-free'
 wget -qO- https://deb.opera.com/archive.key | sudo apt-key add -
@@ -268,7 +272,7 @@ sleep 2
 
  22)
  #Install GUFW
-
+clear
   echo "Installazione GUFW"
 apt-get install gufw -y
   echo "Operazione completata. Torno al menu principale"
@@ -277,7 +281,7 @@ sleep 2
 
 23)
 #Install Vivaldi Browser
-
+clear
  echo "Installazione Vivaldi Browser"
 curl http://repo.vivaldi.com/stable/linux_signing_key.pub | apt-key add -
 echo "deb http://repo.vivaldi.com/stable/deb/ stable main" | tee /etc/apt/sources.list.d/vivaldibrowser.list
@@ -289,6 +293,7 @@ sleep 2
 
 24)
 #Install TLP
+clear
  echo "Installazione Risparmio energetico TLP"
 apt-get install tlp tlp-rdw && tlp start
   echo "Operazione completata. Torno al menu principale"
@@ -297,6 +302,7 @@ sleep 2
 
 25)
 #Clean the system from packages no more useful
+clear
  echo "Pulizia del sistema"
 apt-get --purge autoremove
 apt-get autoclean
@@ -310,6 +316,7 @@ sleep 2
 
 26)
 #Exit from script
+clear
 exit 
   esac
  done # For Loop
