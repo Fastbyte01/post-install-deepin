@@ -48,7 +48,8 @@ sudo apt-get install dialog
  23 "Vivaldi Browser" off
  24 "Risparmio energetico TLP" off
  25 "Pulizia del sistema" off
- 26 "Esci" off)
+ 26 "Supporto ppa"
+ 27 "Esci" off)
 
  while true; do
  choices=$("${cmd[@]}" "${options[@]}" 2>&1 >/dev/tty)
@@ -315,6 +316,15 @@ sleep 2
 ;;
 
 26)
+#Insert support for ppa
+clear 
+  echo "Installazione supporto ppa"
+apt-get install software-properties-common && apt-get install dirmngr
+  echo "Operazione completata. Torno al menu principale"
+sleep 2
+;; 
+
+27)
 #Exit from script
 clear
 exit 
