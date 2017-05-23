@@ -309,7 +309,6 @@ apt-get --purge autoremove
 apt-get autoclean
 apt-get clean
 rm -fr /tmp/*
-rm -rfv ~/.local/share/Trash/*
 apt-get update
  echo "Operazione completata. Torno al menu principale"
 sleep 2
